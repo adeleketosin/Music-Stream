@@ -18,12 +18,13 @@ const createAlbum = async (req, res) => {
             Title:${value.title}
             Release year: ${value.releaseyear}
             Genre: ${value.genre}`;
-            
+
             const song = album ({
                 title:value.title,
                 releaseyear: value.releaseyear,
                 genre: value.genre,
-                artistid: value.artistid, 
+                artistid: value.artistid,
+                image: req.file.path, 
         })
         const songs = await song.save();
         await artist.updateOne(

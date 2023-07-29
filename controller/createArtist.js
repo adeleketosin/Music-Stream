@@ -13,6 +13,7 @@ const createArtist = async (req, res) => {
             name:value.name,
             genre: value.genre,
             artistEmail: value.artistEmail,
+            image: req.file.path, 
             albums : []
         })
         console.log(newSong)
